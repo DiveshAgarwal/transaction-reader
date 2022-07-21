@@ -40,6 +40,13 @@ $ npm install --production
 $ npm start 
 ```
 
+To run the cron to get prices run: 
+
+```
+$ cd transaction-reader
+$ node src/cronJobs/index.js
+```
+
 ## Folder Structure
 * app.js - entry point in the project
 * .env - enviroment file
