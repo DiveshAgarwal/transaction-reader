@@ -31,7 +31,7 @@ class TransactionService {
   }
 
   /**
-   * @param {object} data request parameter to get the user transactions
+   * @param {string} address account address of the user to perform operations
    * @description gets user account balance and current INR value of the account
    * @returns object
    */
