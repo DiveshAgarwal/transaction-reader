@@ -1,7 +1,7 @@
 /**
  * @module Transaction
  * @type model
- * @description DB model block chain transactions
+ * @description DB model to store blockchain transactions
  * @author Divesh Agarwal
  */
 
@@ -47,7 +47,7 @@ const TransactionSchema = new mongoose.Schema({
     required: true,
   },
   value: {
-    type: String,
+    type: Number,
     required: true,
   },
   gas: {

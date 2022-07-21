@@ -29,6 +29,29 @@ const transactionRepo = {
     const res = getPromiseResults(results);
     return res;
   },
+
+  /**
+   * @description gets sum of the value from transactions based on the condition
+   * @param {object} filter conditions to get transactions
+   * @returns transaction
+   */
+  async getTransactions(filter) {
+    // getting transactions based on the filter and adding the value
+    return Transaction.aggregate([
+      {
+        $match: {
+          ...filter,
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          total: { $sum: "$value" },
+          count: { $sum: 1 },
+        },
+      },
+    ]);
+  },
 };
 
 module.exports = transactionRepo;
